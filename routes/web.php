@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ImageController;
+use App\Models\Image;
 
 Route::get('/', function () {
-    return view('welcome');
+    $image1 = Image::find(1); // Fetch the image with ID 1
+    $image2 = Image::find(2); // Fetch the image with ID 2
+    return view('welcome', compact('image1', 'image2'));
 });
 
 Route::get('/dashboard', function () {
