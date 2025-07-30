@@ -16,23 +16,32 @@ class UserSeeder extends Seeder
     {
         // Add multiple users
         User::create([
-            'username' => 'john_doe',
+            'username' => 'johny_does',
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
+            'address' => '123 Main St, Springfield',
+            'profile_picture' => null, // Assuming no profile picture for this user
+            'bio' => 'Just a regular guy who loves gaming.',
             'password' => Hash::make('password'), // Hash the password
         ]);
 
         User::create([
-            'username' => 'jane_doe',
+            'username' => 'Willy_Smithy',
             'name' => 'Will Smith',
             'email' => 'will.smith@example.com',
+            'address' => '123 Main St, Springfield',
+            'profile_picture' => null, // Assuming no profile picture for this user
+            'bio' => 'Just a regular guy who loves gaming.',
             'password' => Hash::make('password'), // Hash the password
         ]);
 
         User::create([
-            'username' => 'clark_kent',
+            'username' => 'clarkus_kentus',
             'name' => 'Clark Kent',
             'email' => 'Clark.Kent@example.com',
+            'address' => '123 Main St, Springfield',
+            'profile_picture' => null, // Assuming no profile picture for this user
+            'bio' => 'Just a regular guy who loves gaming.',
             'password' => Hash::make('password'), // Hash the password
         ]);
     }

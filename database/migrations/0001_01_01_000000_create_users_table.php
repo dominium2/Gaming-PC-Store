@@ -15,13 +15,19 @@ return new class extends Migration
             $table->id();
             $table->string('username'); // Added username column
             $table->string('name');
-            $table->binary('profile_picture')->nullable(); // Added profile picture column
+            $table->string('address');
+            $table->binary('profile_picture')->nullable(); // Define as binary
             $table->string('bio')->nullable(); // Added bio column
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+        });
+
+        // Modify the profile_picture column to LONGBLOB
+        Schema::table('users', function (Blueprint $table) {
+            DB::statement('ALTER TABLE users MODIFY profile_picture LONGBLOB');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
