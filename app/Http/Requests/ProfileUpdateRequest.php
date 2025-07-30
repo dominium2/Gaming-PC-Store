@@ -32,6 +32,13 @@ class ProfileUpdateRequest extends FormRequest
                 'max:255',
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
+
+            'birthday' => [
+                'nullable',
+                'date',
+                'before_or_equal:today', // Ensure the birthday is not in the future
+            ],
+
             'address'=> ['required', 'string', 'max:255'],
 
             'profile_picture' => [

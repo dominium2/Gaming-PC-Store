@@ -79,6 +79,12 @@
                     </div>
 
                     <div>
+                        <x-input-label for="birthday" :value="__('Birthday')" />
+                        <x-text-input id="birthday" name="birthday" type="date" class="mt-1 block w-full" required />
+                        <x-input-error class="mt-2" :messages="$errors->get('birthday')" />
+                    </div>
+
+                    <div>
                         <x-input-label for="is_admin" :value="__('Is Admin')" />
                         <div class="flex items-center mt-1">
                             <!-- Hidden input to send false when checkbox is unchecked -->

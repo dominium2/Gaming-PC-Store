@@ -39,6 +39,7 @@ class ProfileController extends Controller
         $user->email = $request->input('email');
         $user->address = $request->input('address');
         $user->bio = $request->input('bio');
+        $user->birthday = $request->input('birthday');
 
         if ($user->isDirty('email')) {
             $user->email_verified_at = null;

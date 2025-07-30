@@ -60,6 +60,12 @@
         </div>
 
         <div>
+            <x-input-label for="birthday" :value="__('Birthday')" />
+            <x-text-input id="birthday" name="birthday" type="date" class="mt-1 block w-full" :value="old('birthday', $user->birthday)" required />
+            <x-input-error class="mt-2" :messages="$errors->get('birthday')" />
+        </div>
+
+        <div>
             <x-input-label for="profile_picture" :value="__('Profile Picture')" />
 
             <!-- Display the current profile picture -->

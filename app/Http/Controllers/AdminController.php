@@ -29,6 +29,7 @@ class AdminController extends Controller
             'password' => 'required|string|min:8',
             'address' => 'required|string|max:255',
             'is_admin' => 'required|in:0,1', // Validate is_admin to accept only 0 or 1
+            'birthday' => 'required|date|before_or_equal:today', // Validate birthday
         ]);
 
         User::create([
@@ -38,6 +39,7 @@ class AdminController extends Controller
             'password' => Hash::make($request->password),
             'address' => $request->address,
             'is_admin' => $request->is_admin, // Save the is_admin value directly
+            'birthday' => $request->birthday, // Save the birthday
         ]);
 
         return redirect()->route('admin.dashboard')->with('status', 'User created successfully.');

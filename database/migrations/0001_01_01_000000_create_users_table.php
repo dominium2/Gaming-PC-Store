@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('username'); // Added username column
             $table->string('name');
             $table->string('address');
+            $table->date('birthday')->nullable(); // Added birth_date column
             $table->binary('profile_picture')->nullable(); // Define as binary
             $table->string('bio')->nullable(); // Added bio column
             $table->string('email')->unique();
