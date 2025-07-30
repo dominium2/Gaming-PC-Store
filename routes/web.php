@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
 use App\Models\Image;
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminMiddleware;
 
 Route::get('/', function () {
     $image1 = Image::find(1); // Fetch the image with ID 1
@@ -19,6 +21,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware(['auth', AdminMiddleware::class])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::post('/admin/promote', [AdminController::class, 'promote'])->name('admin.promote');
+    Route::post('/admin/create', [AdminController::class, 'create'])->name('admin.create');
+    Route::delete('/admin/delete', [AdminController::class, 'delete'])->name('admin.delete');
+    Route::post('/admin/demote', [AdminController::class, 'demote'])->name('admin.demote');
 });
 
 require __DIR__.'/auth.php';

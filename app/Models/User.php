@@ -25,6 +25,7 @@ class User extends Authenticatable
         'bio',
         'email',
         'password',
+        'is_admin', // Add this line to allow mass assignment of is_admin
     ];
 
     /**
@@ -47,6 +48,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_admin' => 'boolean', // Cast is_admin as boolean
         ];
     }
 }

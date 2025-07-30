@@ -38,11 +38,22 @@ class UserSeeder extends Seeder
         User::create([
             'username' => 'clarkus_kentus',
             'name' => 'Clark Kent',
-            'email' => 'Clark.Kent@example.com',
+            'email' => 'clark.kent@example.com',
             'address' => '123 Main St, Springfield',
             'profile_picture' => null, // Assuming no profile picture for this user
             'bio' => 'Just a regular guy who loves gaming.',
             'password' => Hash::make('password'), // Hash the password
+        ]);
+
+        User::create([
+            'username' => 'bruce_wayne',
+            'name' => 'Bruce Wayne',
+            'email' => 'bruce.wayne@example.com',
+            'address' => '123 Main St, Springfield',
+            'profile_picture' => null, // Assuming no profile picture for this user
+            'bio' => 'Just a regular admin who loves gaming.',
+            'password' => Hash::make('password'), // Hash the password
+            'is_admin' => true, // Mark this user as an admin
         ]);
     }
 }
