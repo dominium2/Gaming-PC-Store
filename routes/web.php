@@ -9,7 +9,7 @@ Route::get('/', function () {
     $image1 = Image::find(1); // Fetch the image with ID 1
     $image2 = Image::find(2); // Fetch the image with ID 2
     return view('welcome', compact('image1', 'image2'));
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
