@@ -7,6 +7,7 @@ use App\Models\Image;
 use App\Http\Controllers\AdminController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     $image1 = Image::find(1); // Fetch the image with ID 1
@@ -19,6 +20,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/news', [NewsController::class, 'index'])->name('news');
+
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
 
 // Use the fully qualified class name for the admin middleware
 Route::middleware(['auth', AdminMiddleware::class])->group(function () {
@@ -33,6 +36,10 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::post('/admin/create', [AdminController::class, 'create'])->name('admin.create');
     Route::delete('/admin/delete', [AdminController::class, 'delete'])->name('admin.delete');
     Route::post('/admin/demote', [AdminController::class, 'demote'])->name('admin.demote');
+
+    Route::get('/faq/manage', [FaqController::class, 'manage'])->name('faq.manage');
+    Route::post('/faq', [FaqController::class, 'store'])->name('faq.store');
+    Route::delete('/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
 });
 
 Route::middleware('auth')->group(function () {
