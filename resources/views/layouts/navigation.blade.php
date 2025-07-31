@@ -24,6 +24,10 @@
                         {{ __('FAQ') }}
                     </x-nav-link>
 
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
+                        {{ __('Contact') }}
+                    </x-nav-link>
+
                     <!-- Admin Links -->
                     @if (Auth::check() && Auth::user()->is_admin)
                         <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
@@ -36,6 +40,10 @@
 
                         <x-nav-link :href="route('news.manage')" :active="request()->routeIs('news.manage')">
                             {{ __('Manage News') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('admin.mail')" :active="request()->routeIs('admin.mail')">
+                            {{ __('Admin Mail') }}
                         </x-nav-link>
                     @endif
                 </div>

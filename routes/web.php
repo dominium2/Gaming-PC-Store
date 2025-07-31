@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     $image1 = Image::find(1); // Fetch the image with ID 1
@@ -42,6 +43,8 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::delete('/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
 
     Route::get('/news/manage', [NewsController::class, 'manage'])->name('news.manage');
+    Route::get('/admin/mail', [ContactController::class, 'adminMail'])->name('admin.mail');
+    Route::delete('/admin/mail/{message}', [ContactController::class, 'destroy'])->name('admin.mail.delete');
 });
 
 Route::middleware('auth')->group(function () {
@@ -49,5 +52,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
 require __DIR__.'/auth.php';

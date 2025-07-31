@@ -13,9 +13,11 @@ class DatabaseSeeder extends Seeder
     {
         // Call all seeders here
         $this->call([
-            UserSeeder::class, // Run the UserSeeder
-            ImageSeeder::class, // Run the ImageSeeder
+            UserSeeder::class,
+            ImageSeeder::class,
             NewsSeeder::class,
+            FaqsTableSeeder::class,
+            MessagesTableSeeder::class,
         ]);
     }
 }
