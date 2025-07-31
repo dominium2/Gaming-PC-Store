@@ -98,4 +98,13 @@ class AdminController extends Controller
 
         return redirect()->route('admin.dashboard')->with('status', 'User demoted to normal user successfully.');
     }
+
+    /**
+     * Display and manage news posts.
+     */
+    public function manageNews()
+    {
+        $news = News::all(); // Fetch all news posts
+        return view('admin.manage-news', compact('news'));
+    }
 }

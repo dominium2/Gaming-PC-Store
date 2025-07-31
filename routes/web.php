@@ -40,6 +40,8 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::get('/faq/manage', [FaqController::class, 'manage'])->name('faq.manage');
     Route::post('/faq', [FaqController::class, 'store'])->name('faq.store');
     Route::delete('/faq/{faq}', [FaqController::class, 'destroy'])->name('faq.destroy');
+
+    Route::get('/news/manage', [NewsController::class, 'manage'])->name('news.manage');
 });
 
 Route::middleware('auth')->group(function () {

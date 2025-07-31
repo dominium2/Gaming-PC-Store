@@ -44,7 +44,7 @@ class NewsController extends Controller
             'post_date' => now(),
         ]);
 
-        return redirect()->route('admin.dashboard')->with('status', 'News post created successfully.');
+        return redirect()->route('news.manage')->with('status', 'News post created successfully.');
     }
 
     /**
@@ -85,5 +85,14 @@ class NewsController extends Controller
         $news->delete();
 
         return redirect()->route('admin.dashboard')->with('status', 'News post deleted successfully.');
+    }
+
+    /**
+     * Display the manage news page.
+     */
+    public function manage()
+    {
+        $news = News::all(); // Fetch all news posts
+        return view('news.manage-news', compact('news'));
     }
 }

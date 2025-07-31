@@ -23,6 +23,21 @@
                     <x-nav-link :href="route('faq')" :active="request()->routeIs('faq')">
                         {{ __('FAQ') }}
                     </x-nav-link>
+
+                    <!-- Admin Links -->
+                    @if (Auth::check() && Auth::user()->is_admin)
+                        <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
+                            {{ __('User managment') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('faq.manage')" :active="request()->routeIs('faq.manage')">
+                            {{ __('Manage FAQ') }}
+                        </x-nav-link>
+
+                        <x-nav-link :href="route('news.manage')" :active="request()->routeIs('news.manage')">
+                            {{ __('Manage News') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
