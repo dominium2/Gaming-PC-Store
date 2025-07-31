@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -14,7 +15,8 @@ class AdminController extends Controller
     public function dashboard()
     {
         $users = User::all(); // Fetch all users
-        return view('admin.admin-dashboard', compact('users'));
+        $news = News::all(); // Fetch all news posts
+        return view('admin.admin-dashboard', compact('users', 'news'));
     }
 
     /**

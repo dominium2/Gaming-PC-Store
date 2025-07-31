@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UserSeeder::class, // Run the UserSeeder
             ImageSeeder::class, // Run the ImageSeeder
+            NewsSeeder::class,
         ]);
     }
 }

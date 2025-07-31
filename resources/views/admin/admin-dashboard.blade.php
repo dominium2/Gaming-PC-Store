@@ -130,6 +130,49 @@
                     </table>
                 </div>
             </div>
+
+            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
+                <h3 class="text-lg font-medium text-gray-900">Manage News</h3>
+                <div class="mt-4">
+                    <a href="{{ route('news.create') }}" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
+                        {{ __('Create News Post') }}
+                    </a>
+                </div>
+                <div class="mt-4 max-h-64 overflow-y-auto border border-gray-300 rounded">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+                                <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach ($news as $post)
+                                <tr>
+                                    <td class="px-4 py-2 text-sm text-gray-900">{{ $post->id }}</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">{{ $post->title }}</td>
+                                    <td class="px-4 py-2 text-sm text-gray-900">
+                                        <!-- Edit Button -->
+                                        <a href="{{ route('news.edit', $post->id) }}" class="inline-block bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
+                                            {{ __('Edit') }}
+                                        </a>
+
+                                        <!-- Delete Button -->
+                                        <form method="POST" action="{{ route('news.destroy', $post->id) }}" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <x-primary-button class="bg-red-600 hover:bg-red-700">
+                                                {{ __('Delete') }}
+                                            </x-primary-button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
