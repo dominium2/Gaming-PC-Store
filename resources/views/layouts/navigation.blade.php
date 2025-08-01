@@ -46,6 +46,10 @@
                         <x-nav-link :href="route('admin.mail')" :active="request()->routeIs('admin.mail')">
                             {{ __('Admin Mail') }}
                         </x-nav-link>
+
+                        <x-nav-link :href="route('products.manage')" :active="request()->routeIs('products.manage')">
+                            {{ __('Manage Products') }}
+                        </x-nav-link>
                     @endif
                 </div>
             </div>

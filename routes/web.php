@@ -46,6 +46,12 @@ Route::middleware(['auth', AdminMiddleware::class])->group(function () {
     Route::get('/news/manage', [NewsController::class, 'manage'])->name('news.manage');
     Route::get('/admin/mail', [ContactController::class, 'adminMail'])->name('admin.mail');
     Route::delete('/admin/mail/{message}', [ContactController::class, 'destroy'])->name('admin.mail.delete');
+
+    Route::get('/products/manage', [ProductController::class, 'manage'])->name('products.manage');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+    Route::patch('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 });
 
 Route::middleware('auth')->group(function () {
