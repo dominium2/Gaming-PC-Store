@@ -73,8 +73,8 @@ Welcome to the **Gaming PC Store**, an online platform for purchasing high-perfo
 
 all accounts use password as password exept fo the default admin
 
--Email: admin@ehb.be
--password: Password!123
+- Email: admin@ehb.be
+- password: Password!123
 
 ## Technologies Used
 - Laravel
