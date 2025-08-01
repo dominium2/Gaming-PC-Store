@@ -12,17 +12,21 @@ class NewsSeeder extends Seeder
      */
     public function run(): void
     {
+        // Path to the image file
+        $imagePath = storage_path('app/seed-images/modern-gold-background-free-vector.jpg');
+        $imageData = file_exists($imagePath) ? file_get_contents($imagePath) : null; // Read the image file
+
         News::create([
             'title' => 'New Gaming PC Released!',
             'content' => 'We are excited to announce the release of our latest gaming PC.',
-            'picture' => null, // Add a binary image if needed
+            'picture' => $imageData, // Add binary image data
             'post_date' => now(),
         ]);
 
         News::create([
             'title' => 'Holiday Sale!',
             'content' => 'Enjoy discounts on all gaming PCs this holiday season.',
-            'picture' => null, // Add a binary image if needed
+            'picture' => $imageData, // Add binary image data
             'post_date' => now()->subDays(7),
         ]);
     }
