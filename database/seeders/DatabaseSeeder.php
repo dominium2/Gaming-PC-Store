@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             NewsSeeder::class,
             FaqsTableSeeder::class,
             MessagesTableSeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }
