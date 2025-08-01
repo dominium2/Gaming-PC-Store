@@ -2,7 +2,7 @@
     <div class="container mx-auto px-4 py-8">
         <div class="text-center">
             <h1 class="text-4xl font-bold text-white mb-4">Welcome to the Gaming PC Store</h1>
-            <p class="text-lg text-gray-300">Your one-stop shop for high-performance gaming PCs and accessories.</p>
+            <p class="text-lg text-gray-300">Your one-stop shop for high-performance gaming PCs.</p>
         </div>
     </div>
     <div class="w-full h-auto py-12"
