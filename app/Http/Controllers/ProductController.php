@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -107,5 +108,29 @@ class ProductController extends Controller
         $product->delete();
 
         return redirect()->route('products.manage')->with('status', 'Product deleted successfully.');
+    }
+
+    /**
+     * Place an order for a product.
+     */
+    public function order(Product $product)
+    {
+        // Ensure stock is available
+        if ($product->stock < 1) {
+            return redirect()->route('products.show', $product->id)->with('error', 'This product is out of stock.');
+        }
+
+        // Decrease stock count
+        $product->stock -= 1;
+        $product->save();
+
+        // Create an order
+        Order::create([
+            'user_id' => auth()->id(),
+            'product_id' => $product->id,
+            'quantity' => 1, // Always order one PC
+        ]);
+
+        return redirect()->route('profile.orders')->with('status', 'Order placed successfully.');
     }
 }

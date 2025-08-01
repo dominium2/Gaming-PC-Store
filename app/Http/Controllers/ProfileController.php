@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Order;
 
 class ProfileController extends Controller
 {
@@ -69,5 +70,14 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+
+    /**
+     * Display the user's orders.
+     */
+    public function orders()
+    {
+        $orders = Order::where('user_id', auth()->id())->with('product')->get(); // Fetch user's orders
+        return view('profile.orders', compact('orders'));
     }
 }
