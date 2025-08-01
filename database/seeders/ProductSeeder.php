@@ -22,6 +22,7 @@ class ProductSeeder extends Seeder
                 'storage' => '1TB SSD',
                 'picture' => null, // Add binary image data if needed
                 'description' => 'A high-performance gaming PC for enthusiasts.',
+                'stock' => 10, // Add stock count
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -34,6 +35,7 @@ class ProductSeeder extends Seeder
                 'storage' => '512GB SSD',
                 'picture' => null, // Add binary image data if needed
                 'description' => 'A budget-friendly gaming PC with great performance.',
+                'stock' => 5, // Add stock count
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -46,6 +48,7 @@ class ProductSeeder extends Seeder
                 'storage' => '2TB SSD',
                 'picture' => null, // Add binary image data if needed
                 'description' => 'A premium gaming PC for hardcore gamers.',
+                'stock' => 2, // Add stock count
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

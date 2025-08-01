@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('ram'); // RAM details
             $table->string('storage'); // Storage details
             $table->text('description'); // Detailed description
+            $table->integer('stock')->default(0); // Add stock column with a default value of 0
             $table->timestamps();
         });
 

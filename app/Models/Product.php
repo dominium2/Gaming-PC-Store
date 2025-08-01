@@ -18,5 +18,6 @@ class Product extends Model
         'storage',
         'picture',
         'description',
+        'stock', // Add stock to fillable attributes
     ];
 }
