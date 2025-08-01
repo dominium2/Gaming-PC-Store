@@ -52,6 +52,11 @@
                         <textarea id="description" name="description" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>{{ $product->description }}</textarea>
                     </div>
 
+                    <div class="mt-4">
+                        <x-input-label for="stock" :value="__('Stock')" />
+                        <x-text-input id="stock" name="stock" type="number" class="mt-1 block w-full" value="{{ $product->stock }}" required />
+                    </div>
+
                     <x-primary-button class="mt-4">{{ __('Update Product') }}</x-primary-button>
                 </form>
             </div>

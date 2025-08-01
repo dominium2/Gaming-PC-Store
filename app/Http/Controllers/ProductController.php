@@ -87,13 +87,14 @@ class ProductController extends Controller
             'storage' => 'required|string|max:255',
             'picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'description' => 'required|string',
+            'stock' => 'required|integer|min:0', // Validate stock field
         ]);
 
         if ($request->hasFile('picture')) {
             $product->picture = file_get_contents($request->file('picture')->getRealPath());
         }
 
-        $product->update($request->only(['name', 'price', 'cpu', 'gpu', 'ram', 'storage', 'description']));
+        $product->update($request->only(['name', 'price', 'cpu', 'gpu', 'ram', 'storage', 'description', 'stock'])); // Include stock in the update
 
         return redirect()->route('products.manage')->with('status', 'Product updated successfully.');
     }
