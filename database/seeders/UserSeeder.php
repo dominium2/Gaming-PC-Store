@@ -30,19 +30,20 @@ class UserSeeder extends Seeder
             'name' => 'Will Smith',
             'email' => 'will.smith@example.com',
             'address' => '123 Main St, Springfield',
-            'profile_picture' => null, // Assuming no profile picture for this user
+            'profile_picture' => null,
             'bio' => 'Just a regular guy who loves gaming.',
-            'password' => Hash::make('password'), // Hash the password
+            'password' => Hash::make('password'),
         ]);
+
 
         User::create([
             'username' => 'clarkus_kentus',
             'name' => 'Clark Kent',
             'email' => 'clark.kent@example.com',
             'address' => '123 Main St, Springfield',
-            'profile_picture' => null, // Assuming no profile picture for this user
+            'profile_picture' => null,
             'bio' => 'Just a regular guy who loves gaming.',
-            'password' => Hash::make('password'), // Hash the password
+            'password' => Hash::make('password'), 
         ]);
 
         User::create([
@@ -50,10 +51,21 @@ class UserSeeder extends Seeder
             'name' => 'Bruce Wayne',
             'email' => 'bruce.wayne@example.com',
             'address' => '123 Main St, Springfield',
-            'profile_picture' => null, // Assuming no profile picture for this user
+            'profile_picture' => null,
             'bio' => 'Just a regular admin who loves gaming.',
-            'password' => Hash::make('password'), // Hash the password
-            'is_admin' => true, // Mark this user as an admin
+            'password' => Hash::make('password'), 
+            'is_admin' => true,
+        ]);
+
+        User::create([
+            'username' => 'admin',
+            'name' => 'admin',
+            'email' => 'admin@ehb.be',
+            'address' => 'kampus kaai',
+            'profile_picture' => null,
+            'bio' => 'teachers admin account',
+            'password' => Hash::make('Password!123'),
+            'is_admin' => true,
         ]);
     }
 }
