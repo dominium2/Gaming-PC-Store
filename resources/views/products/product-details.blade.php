@@ -22,10 +22,10 @@
                         <p class="mt-4 text-gray-700">{{ $product->description }}</p>
                     </div>
                     <div class="ml-4 text-right">
-                        <p class="text-sm text-gray-500">Stock: {{ $product->stock }}</p> <!-- Display stock count -->
                         <button class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
                             {{ __('Order Now') }}
                         </button>
+                        <p class="text-sm text-gray-500">Stock: {{ $product->stock }}</p>
                     </div>
                 </div>
             </div>
