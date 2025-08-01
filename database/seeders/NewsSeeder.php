@@ -13,7 +13,7 @@ class NewsSeeder extends Seeder
     public function run(): void
     {
         // Path to the image file
-        $imagePath = storage_path('app/seed-images/modern-gold-background-free-vector.jpg');
+        $imagePath = storage_path('public/seed-image/modern-gold-background-free-vector.jpg');
         $imageData = file_exists($imagePath) ? file_get_contents($imagePath) : null; // Read the image file
 
         News::create([

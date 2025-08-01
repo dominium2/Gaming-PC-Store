@@ -12,7 +12,7 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        $ImagePath = storage_path('app/seed-images/CS_NZXTH6RGB_400.webp'); // Path to the image file
+        $ImagePath = storage_path('public/seed-image/CS_NZXTH6RGB_400.webp'); // Path to the image file
         $ImageData = file_exists($ImagePath) ? file_get_contents($ImagePath) : null; // Read the image file
 
         Product::insert([
