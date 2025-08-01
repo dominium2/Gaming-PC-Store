@@ -19,7 +19,7 @@
         </div>
         <div class="container mx-auto px-4 flex justify-center items-center mt-8">
             <button class="mt-8 px-4 py-2 bg-white text-black rounded hover:bg-gray-300">
-                <a href="">View Products</a>
+                <a href="{{ route('products.index') }}">View Products</a>
             </button>
         </div>
     </div>

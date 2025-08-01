@@ -76,7 +76,7 @@
                             </x-dropdown-link>
 
                             <x-dropdown-link :href="route('profile.orders')">
-                                {{ __('My Orders') }}
+                                {{ __('My Purchases') }}
                             </x-dropdown-link>
 
                             <!-- Authentication -->

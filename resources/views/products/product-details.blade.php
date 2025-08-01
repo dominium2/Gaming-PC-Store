@@ -27,7 +27,7 @@
                                 @csrf
                                 <p class="text-sm text-gray-500">Stock: {{ $product->stock }}</p>
                                 <button type="submit" class="mt-4 inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                    {{ __('Order Now') }}
+                                    {{ __('Buy Now') }}
                                 </button>
                             </form>
                         @else
