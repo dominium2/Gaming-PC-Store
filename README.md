@@ -1,61 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gaming PC Store
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome to the **Gaming PC Store**, an online platform for purchasing high-performance gaming PCs. This project is built using Laravel and provides features for users to browse products, place orders, and manage their profiles. Admins can manage products, users, FAQs, and news posts.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### User Features
+- **Browse Products**: View all available gaming PCs with detailed specifications.
+- **Product Details**: Access detailed information about each PC, including price, CPU, GPU, RAM, storage, and stock.
+- **Place Orders**: Order PCs directly from the product details page (requires login).
+- **Order History**: View all past orders in the "My Orders" section.
+- **Contact Form**: Submit inquiries via the contact page.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin Features
+- **Manage Products**: Add, edit, or delete products.
+- **Manage Users**: Promote or demote users to/from admin roles.
+- **Manage FAQs**: Add, edit, or delete FAQs.
+- **Manage News**: Create, edit, or delete news posts.
+- **Admin Mail**: View and delete messages submitted via the contact form.
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Installation
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
+- PHP 8.2 or higher
+- Composer
+- Node.js and npm
+- PHPMyAdmin or another supported database
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/gaming-pc-store.git
+   cd gaming-pc-store
+   ```
 
-## Laravel Sponsors
+2. Install PHP dependencies:
+    ```bash
+    composer install
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. Install Javascript dependencies:
+    ```bash
+    npm install
+    ```
 
-### Premium Partners
+4. Set up your .env file
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+5. Run the migration and seeders:
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
 
-## Contributing
+6. Start the application:
+    #### terminal 1:
+    ```bash
+    phph artisan serve
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    #### terminal 2:
+    ```bash
+    npm run dev
+    ```
 
-## Code of Conduct
+    both need to be running
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Usage
 
-## Security Vulnerabilities
+### Admin access
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+all accounts use password as password exept fo the default admin
 
-## License
+Email: admin@ehb.be
+password: Password!123
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Technologies Used
+- Laravel
+- Tailwind css
+- Alpine.js
+- MySQL(PHPMyAdmin)
+- vite
+
+## Tools Used
+- Vs Code
+- Github Copilot
+- ChatGPT https://chatgpt.com/share/688cde64-1cd0-8003-b738-be0503c7748c
